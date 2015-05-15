@@ -1,32 +1,28 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#http://www.pythonchallenge.com/pc/def/bull.html
+# http://www.pythonchallenge.com/pc/def/bull.html
+
 
 def calcnext(current):
 
     curlen = len(current)
-    i = 0
 
-    next = ''
+    mynext = ''
     count = 1
-    for i in range(0,curlen):
-        if i+1 != curlen and current[i] == current[i+1]:
+    for i in range(0, curlen):
+        if i + 1 != curlen and current[i] == current[i + 1]:
             count += 1
         else:
-            next += str(count)
-            next += str(current[i])
+            mynext += str(count)
+            mynext += str(current[i])
             count = 1
-
-
-    return next
+    return mynext
 
 if __name__ == "__main__":
     a = ['1']
 
-    for i in range(0,31):
-        Temp = calcnext(a[i])
+    for j in range(0, 31):
+        Temp = calcnext(a[j])
         a.append(Temp)
 
     print(len(a[30]))
-
-
