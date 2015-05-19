@@ -6,13 +6,16 @@
 import cPickle as Pickele
 from __builtin__ import file
 
-f = file('banner.p','r')
+if __name__ == "__main__":
 
-strorelist = Pickele.load(f)
+    with open('banner.p','r') as F:
+        strorelist = Pickele.load(F)
 
-for i in strorelist:
-    TempStr = ''
-    for j in i:
-        TempStr += j[0] * j[1]
-    print TempStr
+        print(strorelist)
+
+        for row in strorelist:
+            temp = ''
+            for line in row:
+                temp += line[0] * line[1]
+            print(temp)
 
